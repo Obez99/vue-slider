@@ -28,7 +28,8 @@
 
       <div class="right-container">
 
-        <img v-for="preview in elementsList" :src="preview.image" :alt="preview.title" class="small-image">
+        <img v-for="(preview,i) in elementsList" :src="preview.image" :alt="preview.title" class="small-image"
+          :class="i === currentImage ? 'small-active' : ''">
 
         <button class="arrow up"><i class="fas fa-chevron-up"></i></button>
         <button class="arrow down"><i class="fas fa-chevron-down"></i></button>

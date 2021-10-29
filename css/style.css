@@ -37,6 +37,11 @@ body{
 .right-container .small-image{
   width: 100%;
   height: calc(100%/5);
+  filter:brightness(20%);
+}
+
+.small-image.small-active{
+  filter:brightness(100%)
 }
 
 .container .arrow{
