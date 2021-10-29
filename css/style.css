@@ -14,10 +14,14 @@ body{
 .container .left-container{
   width: 80%;
   position: relative;
+  
+}
+
+.left-container .element{
   opacity: 0;
 }
 
-.left-container.active{
+.element.active{
   opacity: 100%;
 }
 
