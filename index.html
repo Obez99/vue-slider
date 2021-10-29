@@ -16,7 +16,7 @@
   <div id="app">
     <div class="container">
       <div class="left-container">
-        <div class="element active" v-for="(element,i) in elementsList" v-if="i===currentImage">
+        <div class="element" v-for="(element,i) in elementsList" :class="i === currentImage ? 'active' : ''">
           <img class="jumbo-image" :src="element.image" :alt="element.title">
           <div class="jumbo-text">
             <h2>{{element.title}}</h2>
