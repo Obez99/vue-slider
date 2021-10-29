@@ -42,7 +42,8 @@ body{
 }
 
 .small-image.small-active{
-  filter:brightness(100%)
+  filter:brightness(100%);
+  border: 3px solid gray;
 }
 
 .container .arrow{
