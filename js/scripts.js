@@ -42,7 +42,7 @@ new Vue({
     nextImage: function () {
       this.currentImage++;
 
-      if (this.currentImage > 4)
+      if (this.currentImage > this.elementsList.length - 1)
         this.currentImage = 0;
     },
 
