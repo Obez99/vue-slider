@@ -16,7 +16,7 @@
   <div id="app">
     <div class="container">
       <div class="left-container">
-        <div class="element" v-for="element in elementsList">
+        <div class="element active" v-for="(element,i) in elementsList" v-if="i===currentImage">
           <img class="jumbo-image" :src="element.image" :alt="element.title">
           <div class="jumbo-text">
             <h2>{{element.title}}</h2>
@@ -28,11 +28,7 @@
 
       <div class="right-container">
 
-        <img src="img/01.jpg" alt="" class="small-image">
-        <img src="img/02.jpg" alt="" class="small-image">
-        <img src="img/03.jpg" alt="" class="small-image">
-        <img src="img/04.jpg" alt="" class="small-image">
-        <img src="img/05.jpg" alt="" class="small-image">
+        <img v-for="preview in elementsList" :src="preview.image" :alt="preview.title" class="small-image">
 
         <button class="arrow up"><i class="fas fa-chevron-up"></i></button>
         <button class="arrow down"><i class="fas fa-chevron-down"></i></button>
