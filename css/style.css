@@ -38,6 +38,7 @@ body{
   width: 100%;
   height: calc(100%/5);
   filter:brightness(20%);
+  transition: filter 0.2s;
 }
 
 .small-image.small-active{

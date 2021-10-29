@@ -36,5 +36,15 @@ new Vue({
     ],
 
     currentImage: 0
+  },
+
+  methods: {
+    nextImage: function () {
+      this.currentImage++
+    },
+
+    prevImage: function () {
+      this.currentImage--
+    }
   }
 })

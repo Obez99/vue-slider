@@ -31,8 +31,8 @@
         <img v-for="(preview,i) in elementsList" :src="preview.image" :alt="preview.title" class="small-image"
           :class="i === currentImage ? 'small-active' : ''">
 
-        <button class="arrow up"><i class="fas fa-chevron-up"></i></button>
-        <button class="arrow down"><i class="fas fa-chevron-down"></i></button>
+        <button class="arrow up" @click="prevImage()"><i class="fas fa-chevron-up"></i></button>
+        <button class="arrow down" @click="nextImage()"><i class="fas fa-chevron-down"></i></button>
       </div>
     </div>
   </div>
