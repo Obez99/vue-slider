@@ -17,13 +17,10 @@
     <div class="container">
       <div class="left-container">
         <div class="element" v-for="element in elementsList">
-          <img class="jumbo-image" src="img/01.jpg" alt="image1">
+          <img class="jumbo-image" :src="element.image" :alt="element.title">
           <div class="jumbo-text">
-            <h2>Svezia</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore
-              aliquid
-              deleniti aut veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum
-              corporis.</p>
+            <h2>{{element.title}}</h2>
+            <p>{{element.text}}</p>
           </div>
         </div>
       </div>
