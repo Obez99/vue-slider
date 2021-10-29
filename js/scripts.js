@@ -40,11 +40,17 @@ new Vue({
 
   methods: {
     nextImage: function () {
-      this.currentImage++
+      this.currentImage++;
+
+      if (this.currentImage > 4)
+        this.currentImage = 0;
     },
 
     prevImage: function () {
       this.currentImage--
+
+      if (this.currentImage < 0)
+        this.currentImage = 4;
     }
   }
 })
