@@ -40,6 +40,7 @@ const app = new Vue({
   },
 
   methods: {
+    //Function that updates counter to next image
     nextImage: function () {
       this.currentImage++;
 
@@ -47,6 +48,7 @@ const app = new Vue({
         this.currentImage = 0;
     },
 
+    //Function that updates counter to previous image
     prevImage: function () {
       this.currentImage--
 
@@ -54,10 +56,12 @@ const app = new Vue({
         this.currentImage = 4;
     },
 
+    //Removes interval
     stopImage: function () {
       clearInterval(autoSlide);
     },
 
+    //Adds interval
     startImage: function () {
       autoSlide = setInterval(this.nextImage, 3000)
     }
@@ -65,12 +69,18 @@ const app = new Vue({
   },
 
   mounted() {
+
+    //Makes slider update every 3 seconds when Vue is mounted
     autoSlide = setInterval(this.nextImage, 3000),
 
+      //When arrow up or down are pressed:
+      //Resets interval and updates image
       window.addEventListener("keydown", function (e) {
 
+        //Stops interval
         app.stopImage()
 
+        //Checks input and updates image
         if (e.key === "ArrowDown")
           app.nextImage()
 
@@ -78,6 +88,7 @@ const app = new Vue({
         if (e.key === "ArrowUp")
           app.prevImage()
 
+        //Starts interval
         app.startImage()
       })
   },

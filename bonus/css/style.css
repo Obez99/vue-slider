@@ -4,6 +4,8 @@
   box-sizing: border-box;
 }
 
+/*SELECTORS*/
+/*******************************/
 body{
   height: 100vh;
   display: flex;
@@ -66,7 +68,11 @@ body{
 .container .arrow.down{
   bottom:10px;
 }
+/*******************************/
 
+
+/*CLASSES*/
+/*******************************/
 .container{
   width: 1200px;
   height: 600px;
@@ -93,3 +99,4 @@ body{
 .fa-chevron-down{
   padding-top: 6px;
 }
+/*******************************/

@@ -16,6 +16,8 @@
   <div id="app">
     <div class=" container">
       <div class=" left-container">
+
+        <!--Left big images-->
         <div class="element" v-for="(element,i) in elementsList" :class="i === currentImage ? 'active' : ''">
           <img class="jumbo-image" :src="element.image" :alt="element.title" @mouseover="stopImage()"
             @mouseout="startImage()">
@@ -29,9 +31,11 @@
 
       <div class="right-container">
 
+        <!--Right small preview images-->
         <img v-for="(preview,i) in elementsList" :src="preview.image" :alt="preview.title" class="small-image"
           :class="i === currentImage ? 'small-active' : ''">
 
+        <!--Right navigation buttons-->
         <button class="arrow up" @click="prevImage()"><i class="fas fa-chevron-up"></i></button>
         <button class="arrow down" @click="nextImage()"><i class="fas fa-chevron-down"></i></button>
       </div>
