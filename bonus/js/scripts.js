@@ -1,6 +1,6 @@
 Vue.config.devtools = true;
 
-new Vue({
+const app = new Vue({
   el: "#app",
   data: {
     elementsList: [
@@ -36,7 +36,7 @@ new Vue({
     ],
 
     currentImage: 0,
-    autoSlide: ""
+    autoSlide: "",
   },
 
   methods: {
@@ -65,6 +65,16 @@ new Vue({
   },
 
   mounted() {
-    autoSlide = setInterval(this.nextImage, 3000)
-  }
+    autoSlide = setInterval(this.nextImage, 3000),
+
+      window.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowDown")
+          app.nextImage()
+
+        if (e.key === "ArrowUp")
+          app.prevImage()
+
+      })
+  },
+
 })

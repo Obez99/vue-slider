@@ -1,0 +1,95 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .left-container{
+  width: 80%;
+  position: relative;
+  
+}
+
+.left-container .element{
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.element.active{
+  opacity: 100%;
+}
+
+.container .right-container{
+  width: 20%;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.right-container .small-image{
+  width: 100%;
+  height: calc(100%/5);
+  filter:brightness(20%);
+  transition: filter 0.2s;
+}
+
+.small-image.small-active{
+  filter:brightness(100%);
+  border: 3px solid gray;
+}
+
+.container .arrow{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: gray;
+  border:0;
+  border-radius: 50%;
+  right:50%;
+  transform: translateX(50%);
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.container .arrow.up{
+  top:10px;
+}
+
+.container .arrow.down{
+  bottom:10px;
+}
+
+.container{
+  width: 1200px;
+  height: 600px;
+  background-color: gray;
+  display: flex;
+}
+
+.jumbo-image{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  
+}
+
+.jumbo-text{
+  color: white;
+  font-size: 20px;
+  text-align: right;
+  position: absolute;
+  bottom:30px;
+  right:20px;
+}
+
+.fa-chevron-down{
+  padding-top: 6px;
+}
