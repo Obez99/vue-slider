@@ -68,12 +68,17 @@ const app = new Vue({
     autoSlide = setInterval(this.nextImage, 3000),
 
       window.addEventListener("keydown", function (e) {
+
+        app.stopImage()
+
         if (e.key === "ArrowDown")
           app.nextImage()
+
 
         if (e.key === "ArrowUp")
           app.prevImage()
 
+        app.startImage()
       })
   },
 
