@@ -35,7 +35,8 @@ new Vue({
       }
     ],
 
-    currentImage: 0
+    currentImage: 0,
+    autoSlide: ""
   },
 
   methods: {
@@ -51,10 +52,19 @@ new Vue({
 
       if (this.currentImage < 0)
         this.currentImage = 4;
+    },
+
+    stopImage: function () {
+      clearInterval(autoSlide);
+    },
+
+    startImage: function () {
+      autoSlide = setInterval(this.nextImage, 3000)
     }
+
   },
 
   mounted() {
-    setInterval(this.nextImage, 3000)
+    autoSlide = setInterval(this.nextImage, 3000)
   }
 })
