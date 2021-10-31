@@ -37,7 +37,7 @@ const app = new Vue({
 
     currentImage: 0,
     autoSlide: "",
-    intervalCheck: true
+    intervalCheck: true,
   },
 
   methods: {
@@ -58,14 +58,13 @@ const app = new Vue({
     },
 
     //Removes interval
-    stopImage: function () {
-      this.intervalCheck = false;
+    stopImage: function (bool) {
       clearInterval(autoSlide);
+      this.intervalCheck = bool;
     },
 
     //Adds interval
     startImage: function () {
-      this.intervalCheck = true;
       autoSlide = setInterval(this.nextImage, 3000);
     }
 
@@ -81,7 +80,7 @@ const app = new Vue({
       window.addEventListener("keydown", function (e) {
 
         //Stops interval
-        app.stopImage()
+        app.stopImage(app.intervalCheck)
 
         //Checks input and updates image
         if (e.key === "ArrowDown")
@@ -92,7 +91,7 @@ const app = new Vue({
           app.prevImage()
 
         //Starts interval if mouse is not over image
-        if (this.intervalCheck === true)
+        if (app.intervalCheck === true)
           app.startImage()
       })
   },
