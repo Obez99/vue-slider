@@ -37,6 +37,7 @@ const app = new Vue({
 
     currentImage: 0,
     autoSlide: "",
+    intervalCheck: true
   },
 
   methods: {
@@ -58,12 +59,14 @@ const app = new Vue({
 
     //Removes interval
     stopImage: function () {
+      this.intervalCheck = false;
       clearInterval(autoSlide);
     },
 
     //Adds interval
     startImage: function () {
-      autoSlide = setInterval(this.nextImage, 3000)
+      this.intervalCheck = true;
+      autoSlide = setInterval(this.nextImage, 3000);
     }
 
   },
@@ -88,8 +91,9 @@ const app = new Vue({
         if (e.key === "ArrowUp")
           app.prevImage()
 
-        //Starts interval
-        app.startImage()
+        //Starts interval if mouse is not over image
+        if (this.intervalCheck === true)
+          app.startImage()
       })
   },
 
