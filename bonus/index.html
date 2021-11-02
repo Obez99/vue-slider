@@ -14,13 +14,12 @@
 
 <body>
   <div id="app">
-    <div class=" container">
+    <div class=" container" @mouseover="stopImage(false)" @mouseout="startImage()">
       <div class=" left-container">
 
         <!--Left big images-->
         <div class="element" v-for="(element,i) in elementsList" :class="i === currentImage ? 'active' : ''">
-          <img class="jumbo-image" :src="element.image" :alt="element.title" @mouseover="stopImage(false)"
-            @mouseout="startImage()">
+          <img class="jumbo-image" :src="element.image" :alt="element.title">
           <div class="jumbo-text">
             <h2>{{element.title}}</h2>
             <p>{{element.text}}</p>
