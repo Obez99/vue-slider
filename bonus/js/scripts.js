@@ -43,18 +43,31 @@ const app = new Vue({
   methods: {
     //Function that updates counter to next image
     nextImage: function () {
+      //Stops interval
+      this.stopImage(this.intervalCheck)
+
       this.currentImage++;
 
       if (this.currentImage > this.elementsList.length - 1)
         this.currentImage = 0;
+
+      //Starts interval if mouse is not over image
+      if (this.intervalCheck === true)
+        this.startImage()
     },
 
     //Function that updates counter to previous image
     prevImage: function () {
+      //Stops interval
+      this.stopImage(this.intervalCheck)
+
       this.currentImage--
 
       if (this.currentImage < 0)
         this.currentImage = 4;
+
+      if (this.intervalCheck === true)
+        this.startImage()
     },
 
     //Removes interval
@@ -79,9 +92,6 @@ const app = new Vue({
       //Resets interval and updates image
       window.addEventListener("keydown", function (e) {
 
-        //Stops interval
-        app.stopImage(app.intervalCheck)
-
         //Checks input and updates image
         if (e.key === "ArrowDown")
           app.nextImage()
@@ -90,9 +100,6 @@ const app = new Vue({
         if (e.key === "ArrowUp")
           app.prevImage()
 
-        //Starts interval if mouse is not over image
-        if (app.intervalCheck === true)
-          app.startImage()
       })
   },
 
