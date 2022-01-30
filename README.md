@@ -15,3 +15,5 @@ In this page i remastered [the other carousel i made in vanilla javascript](http
   
   
 **Screenshots**:<br>
+
+![vueslider](https://user-images.githubusercontent.com/85038274/151702515-9e1fc6f4-cde5-474d-ad5d-b144959a3459.PNG)
